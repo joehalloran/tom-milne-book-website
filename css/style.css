@@ -48,6 +48,8 @@ body {
 	background-color: #F4A036;
 }
 
+/* Main page and general styles
+-------------------------------------------------- */
 
 .book-preview > a.btn {
 	position: absolute;
@@ -60,8 +62,32 @@ body {
 }
 
 hr {
-	border-color: #F4A036;
+	/*border-color: #F4A036;*/
 }
+
+/* My Bookshelf styles
+-------------------------------------------------- */
+
+.my-bookshelf-main-section > .dropdown {
+	margin-top: 20px;
+}
+
+ol.top-ten-books > li {
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.my-bookshelf-sidebar > .panel > .panel-heading {
+	background-color: #F44336; 
+	color: #FFFFFF;
+}
+
+.comment-form p {
+	font-size: 16px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
 
 /* Footer styles
 -------------------------------------------------- */
