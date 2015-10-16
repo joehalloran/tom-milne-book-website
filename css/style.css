@@ -1,0 +1,62 @@
+/*!
+ * Custom style sheet for Rosendale book blog
+ */
+
+body {
+    font-family: 'Merriweather', serif;
+}
+
+/* Navigation styles */
+.navbar {
+    border-radius: 0px;
+}
+
+.navbar-inverse {
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+#secondary-navbar {
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+
+#secondary-navbar > button {
+	padding-top: 8px;
+	background-color: #F44336;
+	color: #FFFFFF;
+	border-top-right-radius: 0px; 
+	border-top-left-radius: 0px;
+}
+
+/* HEADER AND JUMBOTRON STYLES */
+.jumbotron {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #FFFFFF;
+	background-color: #F4A036;
+}
+
+
+.book-preview > a.btn {
+	position: absolute;
+	bottom: 0px;
+	right: 15px;
+	margin-top: 5px;
+	background-color: #F44336; 
+	border-color: #F44336; 
+	color: #FFFFFF;
+}
+
+
+
+
