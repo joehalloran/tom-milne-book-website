@@ -103,61 +103,63 @@
 	        <div class="dropdown pull-right">
 				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Sort by<span class="caret"></span></button>
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li><a href="#">Author</a></li>
-					<li><a href="#">Title</a></li>
-					<li><a href="#">My Rating</a></li>
+					<li><a href="#" id="authorSort" class="ascending">Author</a></li>
+					<li><a href="#" id="titleSort">Title</a></li>
+					<li><a href="#" id="ratingSort">My Rating</a></li>
 				</ul>
 			</div>
-	        <h2>My Books<br /><small>You have read 10 / 100 Books</h2>
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>Coraline<br /><small>Neil Gaiman</small></h4>
-                    <img src="img/coraline-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">      
-                    <h4>Charmed Life<br /><small>Diana Wynne Jones</small></h4>
-                    <img src="img/charmed5-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>Billionaire Boy<br /><small>David Walliams</small></h4>
-                    <img src="img/billionaie-boy-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>Awful Auntie<br /><small>David Walliams</small></h4>
-                    <img src="img/awful-autnie-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>Artemis Fowl<br /><small>Eoin Colfer</small></h4>
-                    <img src="img/artemis-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>Agnes Cecilia<br /><small>Maria Gripe</small></h4>
-                    <img src="img/agnes-cecilia-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
-            <div class="col-sm-4 book-preview text-center">
-                <a href="#">
-                    <h4>A Medal for Leroy<br /><small>Michael Morpurgo</small></h4>
-                    <img src="img/a_medal_for_leroy-small.jpg" class="img-responsive img-rounded" />
-                </a>
-                <span>My Rating: <img src="img/fourstar.png"></span>
-            </div><!-- /.col 3 -->
+	        <h2>My Books<br /><small>You have read 10 / 100 Books</small></h2>
+            <div class="row bookshelf">
+                <div class="col-sm-4 book-preview text-center" data-title="Coraline" data-author="Gaiman">
+                    <a href="#">
+                        <h4>Coraline<br /><small>Neil Gaiman</small></h4>
+                        <img src="img/coraline-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="Charmed Life" data-author="Wynne Jones">
+                    <a href="#">      
+                        <h4>Charmed Life<br /><small>Diana Wynne Jones</small></h4>
+                        <img src="img/charmed5-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="Billionaire Boy" data-author="Walliams">
+                    <a href="#">
+                        <h4>Billionaire Boy<br /><small>David Walliams</small></h4>
+                        <img src="img/billionaie-boy-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="The Awful Auntie" data-author="Walliams">
+                    <a href="#">
+                        <h4>Awful Auntie<br /><small>David Walliams</small></h4>
+                        <img src="img/awful-autnie-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="Artemis Fowl" data-author="Colfer">
+                    <a href="#">
+                        <h4>Artemis Fowl<br /><small>Eoin Colfer</small></h4>
+                        <img src="img/artemis-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="Agnes Cecilia" data-author="Gripe">
+                    <a href="#">
+                        <h4>Agnes Cecilia<br /><small>Maria Gripe</small></h4>
+                        <img src="img/agnes-cecilia-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+                <div class="col-sm-4 book-preview text-center" data-title="A Medal for Leroy" data-author="Morpurgo">
+                    <a href="#">
+                        <h4>A Medal for Leroy<br /><small>Michael Morpurgo</small></h4>
+                        <img src="img/a_medal_for_leroy-small.jpg" class="img-responsive img-rounded" />
+                    </a>
+                    <span>My Rating: <img src="img/fourstar.png"></span>
+                </div><!-- /.col 3 -->
+            </div>
         </div><!-- /.col -->
         <div class="col-md-4 my-bookshelf-sidebar">
             <div class="panel panel-default">
@@ -182,13 +184,13 @@
                 <div class="panel-body">
                     <h4>Book Size</h4>
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default">Small</button>
-                        <button type="button" class="btn btn-default">Large</button>
+                        <button id="smallBookSize" type="button" class="btn btn-default">Small</button>
+                        <button id="largeBookSize" type="button" class="btn btn-default btn-red">Large</button>
                     </div>
                     <h4>Book Shelf</h4>
                      <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default">On</button>
-                        <button type="button" class="btn btn-default">Off</button>
+                        <button id="shelfBackgroundOn" type="button" class="btn btn-default">On</button>
+                        <button id="shelfBackgroundOff" type="button" class="btn btn-default btn-red">Off</button>
                     </div>
                 </div>
             </div>
@@ -223,13 +225,14 @@
       </div><!-- /.container -->
     </footer>
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/rosendalereads.js"></script>
   </body>
 </html>

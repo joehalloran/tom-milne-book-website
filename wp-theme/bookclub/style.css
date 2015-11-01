@@ -1,6 +1,13 @@
-/*!
- * Custom style sheet for Rosendale book blog
+/*
+Theme Name: Rosendale Book Club
+Theme URI:
+Description: A bespoke theme for Rosendale Primary school book blog
+Author: Joe Halloran
+Version: 1.0
+License: MIT
  */
+
+@import url('css/bootstrap.min.css');
 
 body {
     font-family: 'Merriweather', serif;
