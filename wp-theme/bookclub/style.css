@@ -109,6 +109,42 @@ a.ascending:after {
     padding: 4px 5px 0 0;
 }
 
+/* Comment styles
+-------------------------------------------------- */
+.avatar {
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+ol.comment-list {
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+ol.comment-list > li {
+  margin: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
+  border-style: solid;
+  border-top-width: 1px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-color: #E1E1E1;
+
+}
+
+.comment-author {
+  margin-bottom: 5px;
+}
+
+ol.comment-list > li p {
+  padding: 20px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1e1e1;
+}
+
 /* Footer styles
 -------------------------------------------------- */
 footer {

@@ -17,11 +17,11 @@
 	        </div><!-- /.col 12 -->
 	    </div><!-- /.row -->
 	   	<div class="row">
-	   		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	   		<?php 
+	   		if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	   			<div class="col-sm-3 book-preview text-center">
 		   			<a href="<?php the_permalink(); ?>">
 			        	<h3><?php the_title(); ?><br /><small><?php echo get_post_meta(get_the_ID(), 'book_author', true); ?></small></h3>
-			        	<img src="img/coraline-small.jpg" class="img-responsive img-rounded" />
 			        	<?php the_post_thumbnail('full', array( 'class' => 'img-responsive img-rounded')); ?>
 			        </a>
 		        </div><!-- /.col 3 -->

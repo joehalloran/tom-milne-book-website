@@ -10,9 +10,8 @@
 				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 			<?php endif; ?>
 			</div><!-- /.col -->
-			<hr />
 		</div><!-- /.row -->
-			<?php comment_form(); ?> 
-			<!-- <?php comments_template(); ?> -->
+			<hr />
+			<?php comments_template(); ?>
     </div><!-- /.container -->
 <?php get_footer(); ?>
