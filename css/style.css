@@ -4,11 +4,14 @@
 
 body {
     font-family: 'Merriweather', serif;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
+
 .bookshelf-show {
-	background: url(../img/book-shelf.jpg) no-repeat;
-	background-size: 100% 100%;
+  background: url(/img/book-shelf.jpg) no-repeat;
+  background-size: 100% 100%;
 }
 
 /* Navigation styles
@@ -23,7 +26,7 @@ body {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-	color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .navbar-inverse .navbar-brand {
@@ -31,68 +34,62 @@ body {
 }
 
 #secondary-navbar {
-	position: absolute;
-	top: 0;
-	right: 100px;
+  position: absolute;
+  top: 0;
+  right: 100px;
 }
 
 #secondary-navbar > .btn {
-	padding-top: 8px;
-	background-color: #F44336;
-	color: #FFFFFF;
-	border-top-right-radius: 0px; 
-	border-top-left-radius: 0px;
+  padding-top: 8px;
+  background-color: #F44336;
+  color: #FFFFFF;
+  border-top-right-radius: 0px; 
+  border-top-left-radius: 0px;
 }
 
 /* Header and Jumbotron
 -------------------------------------------------- */
 .jumbotron {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	color: #FFFFFF;
-	background-color: #F4A036;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #FFFFFF;
+  background-color: #F4A036;
 }
 
 /* Main page and general styles
 -------------------------------------------------- */
 .book-preview {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .book-preview h3 {
-	color: black;
+  color: black;
 }
 
 hr {
-	/*border-color: #F4A036;*/
+  /*border-color: #F4A036;*/
 }
 
 .book-preview img {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* My Bookshelf styles
 -------------------------------------------------- */
 
 .my-bookshelf-main-section > .dropdown {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 ol.top-ten-books > li {
-	font-size: 16px;
-	padding-top: 5px;
+  font-size: 16px;
+  padding-top: 5px;
 }
 
 .my-bookshelf-sidebar > .panel > .panel-heading {
-	background-color: #F44336; 
-	color: #FFFFFF;
-}
-
-.comment-form p {
-	font-size: 16px;
-	margin-top: 15px;
-	margin-bottom: 0px;
+  background-color: #F44336; 
+  color: #FFFFFF;
 }
 
 a.ascending:after {
@@ -100,6 +97,56 @@ a.ascending:after {
     content: '\25B2';
     float: left;
     padding: 4px 5px 0 0;
+}
+
+.my-bookshelf-sidebar .panel-heading {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.my-bookshelf-sidebar .panel-heading h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Comment styles
+-------------------------------------------------- */
+.avatar {
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+ol.comment-list {
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+p.logged-in-as {
+  margin-bottom: 20px;
+}
+
+ol.comment-list > li {
+  margin: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-color: #E1E1E1;
+
+}
+
+.comment-author {
+  margin-bottom: 5px;
+}
+
+ol.comment-list > li p {
+  padding: 20px;
+  margin: 20px 0px 20px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1e1e1;
 }
 
 /* Footer styles
@@ -113,7 +160,7 @@ footer {
 }
 
 footer h4 {
-	margin-top: 0px;
+  margin-top: 0px;
 }
 
 .list-inline {
