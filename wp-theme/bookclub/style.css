@@ -11,6 +11,9 @@ License: MIT
 
 body {
     font-family: 'Merriweather', serif;
+    font-size: 18px;
+    line-height: 1.8;
+
 }
 
 .bookshelf-show {
@@ -22,6 +25,7 @@ body {
 -------------------------------------------------- */
 .navbar {
     border-radius: 0px;
+    font-size: 14px;
 }
 
 .navbar-inverse {
@@ -35,6 +39,10 @@ body {
 
 .navbar-inverse .navbar-brand {
     color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+  background-color: #A90F03;
 }
 
 #secondary-navbar {
@@ -70,13 +78,20 @@ body {
 	color: black;
 }
 
+.excerpt {
+  font-size: 16px;
+  line-height: 1.6;
+}
 hr {
 	/*border-color: #F4A036;*/
 }
 
-.book-preview img {
-	margin-left: auto;
-	margin-right: auto;
+.book-preview img.book-thumbnail {
+	/*margin-left: auto;
+	margin-right: auto;*/
+  float: left;
+  max-width: 165px;
+  margin-right: 40px;
 }
 
 /* My Bookshelf styles
@@ -96,17 +111,28 @@ ol.top-ten-books > li {
 	color: #FFFFFF;
 }
 
-.comment-form p {
-	font-size: 16px;
-	margin-top: 15px;
-	margin-bottom: 0px;
+a.ascending:after {
+  font-size: 60%;
+  content: '\25B2';
+  float: left;
+  padding: 4px 5px 0 0;
 }
 
-a.ascending:after {
-    font-size: 60%;
-    content: '\25B2';
-    float: left;
-    padding: 4px 5px 0 0;
+a.descending:after {
+  font-size: 60%;
+  content: '\25BC';
+  float: left;
+  padding: 4px 5px 0 0;
+}
+
+.my-bookshelf-sidebar .panel-heading {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.my-bookshelf-sidebar .panel-heading h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 /* Comment styles
@@ -121,12 +147,16 @@ ol.comment-list {
   -webkit-padding-start: 0px;
 }
 
+p.logged-in-as {
+  margin-bottom: 20px;
+}
+
 ol.comment-list > li {
   margin: 10px 0px 10px 0px;
   padding: 10px 0px 10px 0px;
   border-style: solid;
-  border-top-width: 1px;
-  border-bottom-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
   border-left-width: 0px;
   border-right-width: 0px;
   border-color: #E1E1E1;
@@ -139,7 +169,7 @@ ol.comment-list > li {
 
 ol.comment-list > li p {
   padding: 20px;
-  margin: 10px;
+  margin: 20px 0px 20px 20px;
   border-style: solid;
   border-width: 1px;
   border-color: #e1e1e1;

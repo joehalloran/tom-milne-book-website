@@ -21,37 +21,43 @@ if ( post_password_required() )
 
 <div id="comments" class="row">
 
-	<div class="col-md-8">
+	<div class="col-md-9">
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'generate' ); ?></p>
-	<?php endif;
+	<?php endif; ?>
+	
+	<?php
 
 	$commenter = wp_get_current_commenter();
 	$fields = array(
-		'author' => '<input placeholder="' . __( 'Name','generate' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"/>',
-		'email' => '<input placeholder="' . __( 'Email','generate' ) . ' *" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" />',
-		'url' => '<input placeholder="' . __( 'Website','generate' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />',
+		'author' => '<div class="form-group"><label for="author">Name:</label><input class="form-control" placeholder="' . __( 'What is your name?','generate' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"/></div> <!-- /.form-group -->',
+		'email' => '<div class="form-group"><label for="email">Email (optional):</label><input class="form-control" placeholder="' . __( 'What is your email?','generate' ) . '" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" /></div> <!-- /.form-group -->',
 	);
+
 	$defaults = array(
 		'fields'		=> apply_filters( 'comment_form_default_fields', $fields ),
-		'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+		'comment_field' => '<div class="form-group"><label for="comment">Comment:</label><textarea class="form-control" id="comment" name="comment" rows="8" placeholder="' . __( 'Leave your recommendation','generate' ) . ' *" aria-required="true"></textarea></p></div> <!-- /.form-group -->',
 		'must_log_in' 	=> '<p class="must-log-in">' .  sprintf( __( 'You must be <a href="%1$s">logged in</a> to post a comment.','generate' ), wp_login_url( get_permalink() ) ) . '</p>',
 		'logged_in_as'	=> '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','generate' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 		'comment_notes_before' => null,
 		'comment_notes_after'  => null,
+		'class_submit'		   => 'btn btn-red special_submit',
 		'id_form'              => 'commentform',
 		'id_submit'            => 'submit',
-		'title_reply'          => apply_filters( 'generate_leave_comment', __( 'Leave a Comment','generate' ) ),
+		'title_reply'          => apply_filters( 'generate_leave_comment', __( 'Recommend your books here','generate' ) ),
 		'title_reply_to'       => apply_filters( 'generate_leave_reply', __( 'Leave a Reply to %s','generate' ) ),
 		'cancel_reply_link'    => apply_filters( 'generate_cancel_reply', __( 'Cancel reply','generate' ) ),
 		'label_submit'         => apply_filters( 'generate_post_comment', __( 'Post Comment','generate' ) ),
 	);
 	comment_form($defaults); 
 	?>
+
+	<hr />
+	
 
 	<?php // You can start editing here -- including this comment! ?>
 
@@ -73,17 +79,12 @@ if ( post_password_required() )
 
 		<ol class="comment-list">
 			<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use generate_comment() to format the comments.
-				 * If you want to override this in a child theme, then you can
-				 * define generate_comment() and that will be used instead.
-				 * See generate_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments();
-			?>
+				wp_list_comments(); /* array( 
+					'style' 	 => 'ol',
+					'reply_text' => 'Reply to this comment'
+				) );	*/		?>
 		</ol><!-- .comment-list -->
 
-		
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
 			<h1 class="sr-only"><?php _e( 'Comment navigation', 'generate' ); ?></h1>
@@ -91,9 +92,6 @@ if ( post_password_required() )
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'generate' ) ); ?></div>
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
-
-		
-
 
 	<?php endif; // have_comments() ?>
 

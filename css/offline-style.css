@@ -70,9 +70,12 @@ hr {
   /*border-color: #F4A036;*/
 }
 
-.book-preview img {
-  margin-left: auto;
-  margin-right: auto;
+.book-preview .img-responsive {
+  /*margin-left: auto;
+  margin-right: auto;*/
+  float: left;
+  max-width: 165px;
+  margin-right: 40px;
 }
 
 /* My Bookshelf styles
@@ -93,11 +96,19 @@ ol.top-ten-books > li {
 }
 
 a.ascending:after {
-    font-size: 60%;
-    content: '\25B2';
-    float: left;
-    padding: 4px 5px 0 0;
+  font-size: 60%;
+  content: '\25B2';
+  float: left;
+  padding: 4px 5px 0 0;
 }
+
+a.descending:after {
+  font-size: 60%;
+  content: '\25BC';
+  float: left;
+  padding: 4px 5px 0 0;
+}
+
 
 .my-bookshelf-sidebar .panel-heading {
   padding-top: 20px;

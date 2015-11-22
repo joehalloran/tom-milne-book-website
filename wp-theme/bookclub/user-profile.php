@@ -1,10 +1,19 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$user = get_user_by( 'slug', get_query_var( 'user' ) );?>
 	<div class="container">
   		<div class="row">   
 	        <div class="col-md-12">
-	        	<h1>Welcome</h1>
-		        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	        	<h1>Welcome <?php echo $user->first_name; ?></h1>
+		        <p class="lead">TEST TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		        <hr />
+		        <?php $saved_values = get_user_meta($user->id, 'my_bookshelf', true);
+
+		        foreach ( $saved_values as $post_id ) :
+		        	echo $post_id.'-';
+		        	$post = get_post($post_id);
+		        	echo $post->post_title;;
+		        endforeach;
+		        ?>
 	        </div><!-- /.col 12 -->
 	    </div><!-- /.row -->
 	   	<div class="row">
