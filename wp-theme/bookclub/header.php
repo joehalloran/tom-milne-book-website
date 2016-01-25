@@ -40,21 +40,11 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	            </button>
-	            <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> </a>
+	            <a class="navbar-brand" href=<?php echo home_url( '/' )?> ><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
 	        </div> <!-- /.navbar-header -->
 	        <div id="navbar" class="collapse navbar-collapse">
 	        	<ul class="nav navbar-nav">
-	            	<li class="dropdown">
-			            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-			            <ul class="dropdown-menu">
-				            <li><a href="#">Action</a></li>
-				            <li><a href="#">Comedy</a></li>
-				            <li><a href="#">Fantasy</a></li>
-				            <li><a href="#">Mystery</a></li>
-				            <li><a href="#">Folk Tails</a></li>
-			            </ul>
-		            </li>
-		            <li><a href="#about">People</a></li>
+		            <li><a href=<?php echo home_url( '/' )."about" ?> >About</a></li>
 		        </ul>
 		        <ul class="nav navbar-nav navbar-right">
               <?php get_search_form() ?>

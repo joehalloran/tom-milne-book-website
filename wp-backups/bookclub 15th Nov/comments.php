@@ -56,7 +56,7 @@ if ( post_password_required() )
 	);
 	comment_form($defaults); 
 	?>
-	<p>This survey will be open for two weeks, closing on Friday 18th December 2015.</p>
+	<p>This survey will be open for two weeks, closing on  XYZ.</p>
 
 	<hr />
 	

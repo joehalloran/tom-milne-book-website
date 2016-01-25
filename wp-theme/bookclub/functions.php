@@ -1,5 +1,6 @@
 <?php 
 
+###### Function to load additional scripts ######
 function rosendalereads_scripts()
 {
 	// Deregister jquery to load in footer
@@ -19,13 +20,14 @@ function rosendalereads_scripts()
 add_action( 'wp_enqueue_scripts', 'rosendalereads_scripts' );
 
 
-
+########## Function to create Login / logout button at top of page #########
 function bookclubLoginLogout() {
 	$loginoutlink = wp_loginout($_SERVER['REQUEST_URI'], false );
 	$loginout = substr_replace($loginoutlink, ' class="btn" role="button"', 2, 0);
 	echo $loginout;
 }
 
+########## Function to create My bookshelf button at top of page #########
 function mybookshelflink() {
 	if ( is_user_logged_in() ) {
 		global $current_user;
@@ -34,6 +36,7 @@ function mybookshelflink() {
 	}
 }
 
+####### Theme set-up function #############
 if ( ! function_exists( 'rosendalereads_setup' ) ) :
 /**
  * Sets up theme defaults.
@@ -67,6 +70,57 @@ function rosendalereads_setup() {
 endif; // twentyfifteen_setup
 add_action( 'after_setup_theme', 'rosendalereads_setup' );
 
+############## Custom redirect after comments posted ############
+function custom_comment_redirect() {
+	return site_url("/thank-you-for-your-comment/"); // Requires URL of redirect page 
+	// TO DO: Auto-create this page if it doesn't already exist
+}
+add_filter('comment_post_redirect', 'custom_comment_redirect');
+
+
+######### Function to return age recommended images #########
+function age_recommended_images( $post_id ) {
+	$ageRatings = get_the_category( $post_id );
+	if ($ageRatings) {
+		foreach($ageRatings as $rating) {
+		    if ($rating->name == '9+') {
+		    	echo '<img class="img-responsive age-logo" src="'.get_template_directory_uri().'/img/9-logo.png">';
+		    	continue;
+		    }
+		    elseif ($rating->name == '7+') {
+		    	echo '<img class="img-responsive age-logo" src="'.get_template_directory_uri().'/img/7-logo.png">';
+		    	continue;
+		    }
+		    elseif ($rating->name == '5+') {
+		    	echo '<img class="img-responsive age-logo" src="'.get_template_directory_uri().'/img/5-logo.png">';
+		    	continue;
+		    }
+		    elseif ($rating->name == 'u') {
+		    	echo '<img class="img-responsive age-logo" src="'.get_template_directory_uri().'/img/u-logo.png">';
+		    	continue;
+		    }
+	   	} //end foreach
+	}//end if
+}
+
+###### Return Genres ############
+function get_genre($post_id) {
+	$genres = get_the_category ( $post_id );
+	foreach($genres as $genre) {
+		$parent = $genre->parent;
+		if ($parent == get_cat_ID( "Genre" )) { //if a Genre category
+			$genreName = $genre->name;
+			echo "<a href=".site_url("/category/age-recommendation/{$genreName}/").' rel="category tag">'.$genreName."</a>, ";
+		} //endif
+	}//end genre
+	//TO DO: Autocreate Genres on theme install
+}
+
+#### Shorten post excerpts #####
+function custom_excerpt_length() {
+	return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Function to add post to user's 'my bookshelf' array saved in wp-user-meta database.
 function add_book_to_bookshelf($comment_ID, $status) {	
@@ -89,6 +143,7 @@ function add_book_to_bookshelf($comment_ID, $status) {
 	} //endif status == approve
 }
 
+// Add to book to user's bookshelf if comment approved.
 add_action('wp_set_comment_status', 'add_book_to_bookshelf', 10, 2);
 
 
@@ -121,26 +176,5 @@ function userpage_rewrite_catch() {
 }
 add_action( 'template_redirect', 'userpage_rewrite_catch' );
 
-
-
-/*function display_all_books()
-{	
-	$myposts = get_posts();
-	foreach ( $myposts as $post ) : setup_postdata( $post ); 
-		echo get_the_ID();?>
-		<p>Loop from function php</p>
-		
-
-			<div class="col-sm-3 book-preview text-center">
-	   			<a href="<?php the_permalink(); ?>">
-		        	<h3><?php the_title(); ?><br /><small><?php echo get_post_meta(get_the_ID(), 'book_author', true); ?></small></h3>
-		        	<?php the_post_thumbnail('full', array( 'class' => 'img-responsive img-rounded')); ?>
-		        </a>
-	        </div><!-- /.col 3 -->
-	    
-		
-	<?php endforeach; 
-	wp_reset_postdata();
-}*/
 
 ?>

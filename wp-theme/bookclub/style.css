@@ -33,6 +33,10 @@ body {
     border-color: #F44336;
 }
 
+.navbar-inverse .navbar-toggle {
+  border-color: #F44336;  
+}
+
 .navbar-inverse .navbar-nav>li>a {
 	color: #FFFFFF;
 }
@@ -43,6 +47,23 @@ body {
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
   background-color: #A90F03;
+}
+
+.navbar-form {
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+#s {
+    display: inline;
+    width: 85%;
+}
+
+@media (min-width: 768px) {
+    #s {
+        display: inherit;
+        width: auto;
+    }
 }
 
 #secondary-navbar {
@@ -76,6 +97,7 @@ body {
 
 .book-preview h3 {
 	color: black;
+  margin-top: 0px;
 }
 
 .excerpt {
@@ -92,6 +114,11 @@ hr {
   float: left;
   max-width: 165px;
   margin-right: 40px;
+}
+
+img.age-logo {
+  display: inline;
+  margin-right: 5px;
 }
 
 /* My Bookshelf styles
