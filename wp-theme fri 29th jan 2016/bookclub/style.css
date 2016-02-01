@@ -1,0 +1,328 @@
+/*
+Theme Name: Rosendale Book Club
+Theme URI:
+Description: A bespoke theme for Rosendale Primary school book blog
+Author: Joe Halloran
+Version: 1.0
+License: MIT
+ */
+
+@import url('css/bootstrap.min.css');
+
+body {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    line-height: 1.8;
+
+}
+
+/* Navigation styles
+-------------------------------------------------- */
+.navbar {
+    border-radius: 0px;
+    font-size: 14px;
+}
+
+.navbar-inverse {
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: #F44336;  
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+  background-color: #A90F03;
+}
+
+.navbar-form {
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+#s {
+    display: inline;
+    width: 85%;
+}
+
+@media (min-width: 768px) {
+    #s {
+        display: inherit;
+        width: auto;
+    }
+}
+
+#secondary-navbar {
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+
+#secondary-navbar > .btn {
+	padding-top: 8px;
+	background-color: #F44336;
+	color: #FFFFFF;
+	border-top-right-radius: 0px; 
+	border-top-left-radius: 0px;
+}
+
+/* Header and Jumbotron
+-------------------------------------------------- */
+.jumbotron {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #FFFFFF;
+	background-color: #F4A036;
+}
+
+/* Main page and general styles
+-------------------------------------------------- */
+.book-preview {
+	margin-bottom: 50px;
+}
+
+.book-preview h3 {
+	color: black;
+  margin-top: 0px;
+}
+
+.excerpt {
+  font-size: 16px;
+  line-height: 1.6;
+}
+hr {
+	/*border-color: #F4A036;*/
+}
+
+.book-preview img.book-thumbnail {
+	/*margin-left: auto;
+	margin-right: auto;*/
+  float: left;
+  max-width: 165px;
+  margin-right: 40px;
+}
+
+img.age-logo {
+  display: inline;
+  margin-right: 5px;
+}
+
+
+.bookshelf-background {
+  background-image: url('img/empty_bookshelf.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 300px;
+  padding: 10px;
+}
+/* My Bookshelf styles
+-------------------------------------------------- */
+
+.my-bookshelf-main-section > .dropdown {
+	margin-top: 20px;
+}
+
+ol.top-ten-books > li {
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.my-bookshelf-sidebar > .panel > .panel-heading {
+	background-color: #F44336; 
+	color: #FFFFFF;
+}
+
+a.ascending:after {
+  font-size: 60%;
+  content: '\25B2';
+  float: left;
+  padding: 4px 5px 0 0;
+}
+
+a.descending:after {
+  font-size: 60%;
+  content: '\25BC';
+  float: left;
+  padding: 4px 5px 0 0;
+}
+
+.my-bookshelf-sidebar .panel-heading {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.my-bookshelf-sidebar .panel-heading h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Hide 'save' and 'cancel' top five buttons by default */
+#saveTopFive, #cancelTopFive {
+	display: none;
+  margin-right: 5px;
+}
+
+.book_input {
+  border-width: 0px 0px 1px 0px;
+  border-style: dotted;
+  margin-bottom: 5px;
+  padding: 2px;
+  /*border-radius: 6px;*/
+}
+
+.glyphicon-remove {
+  color: red;
+}
+
+.drop-target-div {
+  border-radius: 6px;
+  border-width: 1px;
+}
+
+.drop-target-div-hover {
+  background-color: #F5F5F5;
+}
+
+.book_input span {
+  width: 25px;
+  display: inline-block;
+}
+
+.book_input input {
+  border: none;
+  background-color: transparent;
+}
+
+/* Add spacing between top five book inputs*/
+.ui-droppable {
+  line-height: 40px;
+  border-style: dotted;
+  border-radius: 6px;
+}
+
+/* Drop targets for top 5 books section*/
+.drop-target {
+	border-width: 1px;
+}
+/* Hover over Drop targets for top 5 books section */
+.drop-hover {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+/* Comment styles
+-------------------------------------------------- */
+.avatar {
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+ol.comment-list {
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+p.logged-in-as {
+  margin-bottom: 20px;
+}
+
+ol.comment-list > li {
+  margin: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
+  border-style: solid;
+  border-top-width: 0px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-color: #E1E1E1;
+
+}
+
+.comment-author {
+  margin-bottom: 5px;
+}
+
+ol.comment-list > li p {
+  /*padding: 20px;
+  margin: 20px 0px 20px 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1e1e1;*/
+  margin-left: 20px;
+}
+
+ol.comment-list {
+  font-size: 16px;
+}
+
+.commentmetadata {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.reply {
+  margin-left: 20px;
+}
+
+/* Footer styles
+-------------------------------------------------- */
+footer {
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: #f5f5f5;
+}
+
+footer h4 {
+	margin-top: 0px;
+}
+
+.list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+/* Buttons styles
+-------------------------------------------------- */
+
+.btn-red {
+  color: #fff;
+  background-color: #F44336;
+  border-color: #F44336;
+}
+.btn-red:focus,
+.btn-red.focus {
+  color: #fff;
+  background-color: #F44336;
+  border-color: #F44336;
+}
+.btn-red:hover {
+  color: #fff;
+  background-color: #F44336;
+  border-color: #F44336;
+}
+.btn-red:active,
+.btn-red.active,
+.open > .dropdown-toggle.btn-red {
+  color: #fff;
+  background-color: #F44336;
+  border-color: #F44336;
+}
