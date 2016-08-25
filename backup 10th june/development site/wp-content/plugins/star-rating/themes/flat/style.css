@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+.star-rating.flat{
+box-sizing: border-box;
+}
+
+.star-rating.flat .ratings_stars {
+  background: url("images/star.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+}
+
+
+.star-rating.flat .ratings_over {
+  background: url("images/star-hover.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+}
+
+
+.star-rating.flat .total_votes {
+  background: none repeat scroll 0 0 rgb(221, 221, 221);
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  height: 30px;
+  line-height: 29px;
+  margin-left: 15px;
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.star-rating.flat .loading {
+  background: url("images/loading.gif") no-repeat scroll 12px 7px rgb(221, 221, 221);
+
+}
+
+@media all and (max-width: 799px){
+	
+	
+
+}
