@@ -57,6 +57,14 @@ function teacherDashboard() {
 	}
 }
 
+####### Remove admin bar for none admins #############
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+	  show_admin_bar(false);
+	}
+}
+add_action('after_setup_theme', 'remove_admin_bar');
+
 ####### Theme set-up function #############
 if ( ! function_exists( 'rosendalereads_setup' ) ) :
 /**
@@ -212,6 +220,18 @@ function get_rbc_authorName($post_id) {
 		$authorName = $authorName . ', ' . $secondAuthor;
 	}//end if
 	return $authorName;
+}
+
+###### Soundcloud embed ############
+function get_rbc_soundCloud($post_id) {
+	$embed_code = get_post_meta($post_id, 'soundcloud', true);
+	if ( $embed_code && is_user_logged_in() ) {
+		$output = '<div class="audio-embed">';
+		$output .= '<h3>Listen to this book</h3>';
+		$output .= $embed_code;
+		$output .= '</div>';
+		return $output;
+	}
 }
 
 ###### Return recommended books ############

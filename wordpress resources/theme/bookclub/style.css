@@ -228,6 +228,10 @@ a.descending:before {
   padding: 4px 5px 0 0;
 }
 
+iframe {
+  width: initial;
+}
+
 .user-comments span {
   font-size: 28px;
 }
