@@ -18,8 +18,7 @@
 				        	the_content();
 				        	age_recommended_images($post->ID);
 				        	echo show_average_star_rating($post->ID);
-				        	echo get_rbc_soundCloud($post->ID);
-				        	
+				        	echo get_rbc_mp3link($post->ID);
 				        	?>
 				        </div>
 		        	</div>

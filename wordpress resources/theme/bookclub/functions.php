@@ -223,12 +223,13 @@ function get_rbc_authorName($post_id) {
 }
 
 ###### Soundcloud embed ############
-function get_rbc_soundCloud($post_id) {
-	$embed_code = get_post_meta($post_id, 'soundcloud', true);
-	if ( $embed_code && is_user_logged_in() ) {
-		$output = '<div class="audio-embed">';
+function get_rbc_mp3link($post_id) {
+	$mp3url = get_post_meta($post_id, 'mp3link', true);
+	if ( $mp3url && is_user_logged_in() ) {
+		$output = '<div class="audio-link">';
 		$output .= '<h3>Listen to this book</h3>';
-		$output .= $embed_code;
+		$output .= '<p><a class="mp3link" href='. esc_url($mp3url) .'" target="_blank">';
+		$output .= 'Click here</a> to download the audio file.</p>';
 		$output .= '</div>';
 		return $output;
 	}

@@ -453,6 +453,10 @@ div.stars {
   display: inline-block;
 }
 
+.stars-display {
+  height: 40px;
+}
+
 .stars-display .total-votes {
   background: none repeat scroll 0 0 rgb(221, 221, 221);
   border-radius: 4px;
