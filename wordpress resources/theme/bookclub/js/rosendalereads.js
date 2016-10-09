@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 				$(this).find('p').show();
 				$(this).find('hr').show();
 				$(this).find('#user_profile_rating').show();
-				$(this).find('.star-rating').show();
+				$(this).find('.stars-display').show();
 				$(this).find('.age-logo').show();
 			});
 		}
@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 				$(this).find('p').hide();
 				$(this).find('hr').hide();
 				$(this).find('#user_profile_rating').hide();
-				$(this).find('.star-rating').hide();
+				$(this).find('.stars-display').hide();
 				$(this).find('.age-logo').hide();
 			});
 		}

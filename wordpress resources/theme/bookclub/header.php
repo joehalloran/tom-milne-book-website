@@ -23,7 +23,8 @@
   	<div class="container-fluid jumbotron">
   		<div class="container">
   			<div class="col-md-12">
-	  			<h1>Rosendale Book Club</h1>
+	  			<!-- <h1>Rosendale Book Club</h1> -->
+          <img id="site-logo" class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/img/book-club-logo.png">
   			</div><!-- ./col -->
   		</div> <!-- /.container -->
   	</div> <!-- /.container-fluid -->
