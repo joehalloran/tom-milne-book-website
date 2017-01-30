@@ -266,18 +266,20 @@ function add_book_to_bookshelf($comment_ID, $status) {
 		$comment_object = get_comment($comment_ID);
 		$user_id = $comment_object->user_id;
 		$post_id = $comment_object->comment_post_ID;
-		if ( get_post_type( $post_id ) == 'post' ) { // if is post, not page or other.
-			$saved_values = get_user_meta($user_id, 'my_bookshelf', true);
-			if ( $saved_values ) { // if array already exists
-				if ( !in_array($post_id, $saved_values) ) { // if not in array add value
-					$saved_values[] = $post_id;
-					update_user_meta( $user_id, 'my_bookshelf', $saved_values ); 
-				}
-			} else { //else make new 
-				$new_array = array($post_id);
-				add_user_meta( $user_id, 'my_bookshelf', $new_array, true );
-			} 
-		} // endif get_post_type
+		if ( $comment_object->comment_parent == '0') { // Comment has no parent (i.e. not a reply)
+			if ( get_post_type( $post_id ) == 'post' ) { // if is post, not page or other.
+				$saved_values = get_user_meta($user_id, 'my_bookshelf', true);
+				if ( $saved_values ) { // if array already exists
+					if ( !in_array($post_id, $saved_values) ) { // if not in array add value
+						$saved_values[] = $post_id;
+						update_user_meta( $user_id, 'my_bookshelf', $saved_values ); 
+					}
+				} else { //else make new 
+					$new_array = array($post_id);
+					add_user_meta( $user_id, 'my_bookshelf', $new_array, true );
+				} 
+			} // endif get_post_type
+		} // endif comment_parent == 0
 	} //endif status == approve
 }
 
@@ -291,18 +293,20 @@ function teachers_add_book_to_bookshelf($comment_ID, $comment_approved) {
 		$comment_object = get_comment($comment_ID);
 		$user_id = $comment_object->user_id;
 		$post_id = $comment_object->comment_post_ID;
-		if ( get_post_type( $post_id ) == 'post' ) { // if is post, not page or other.
-			$saved_values = get_user_meta($user_id, 'my_bookshelf', true);
-			if ( $saved_values ) { // if array already exists
-				if ( !in_array($post_id, $saved_values) ) { // if not in array add value
-					$saved_values[] = $post_id;
-					update_user_meta( $user_id, 'my_bookshelf', $saved_values ); 
-				}
-			} else { //else make new 
-				$new_array = array($post_id);
-				add_user_meta( $user_id, 'my_bookshelf', $new_array, true );
-			} 
-		} // endif get_post_type
+		if ( $comment_object->comment_parent == '0') { // Comment has no parent (i.e. not a reply)
+			if ( get_post_type( $post_id ) == 'post' ) { // if is post, not page or other.
+				$saved_values = get_user_meta($user_id, 'my_bookshelf', true);
+				if ( $saved_values ) { // if array already exists
+					if ( !in_array($post_id, $saved_values) ) { // if not in array add value
+						$saved_values[] = $post_id;
+						update_user_meta( $user_id, 'my_bookshelf', $saved_values ); 
+					}
+				} else { //else make new 
+					$new_array = array($post_id);
+					add_user_meta( $user_id, 'my_bookshelf', $new_array, true );
+				} 
+			} // endif get_post_type
+		} // endif comment_parent == 0
 	} //endif comment_approved
 }
 // Add to book to user's bookshelf if comes from a teacher or administrator.
