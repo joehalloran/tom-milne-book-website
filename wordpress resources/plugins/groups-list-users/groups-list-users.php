@@ -31,14 +31,25 @@ function get_all_group_ids( ) {
 	return $output;
 }
 
+// Note: Display_name is the sort property (rather than first name & surname) as display name is only value available in built in groups->__get('users') array
+function sortGroupsUserByDisplayName( $a, $b ) {
+	// Convert to lowercase to order alphatically regardless of case.
+	$nameA = strtolower($a->display_name);
+	$nameB = strtolower($b->display_name);
+    return ($nameA == $nameB) ? 0 : ($nameA > $nameB ) ? 1 : -1;
+}
+
+
 
 function groups_users_list_groups() {
 	$all_group_ids = get_all_group_ids();
+	$hiddenGroups = array("Class of 2015", "Class of 2016", "Former teachers", "Pupils leaving", "Registered", "guest");
 	echo '<div class="col-sm-3 col-lg-2" style="border-right: 1px solid #eee;"><h2>All Classes</h2>';
 	foreach ($all_group_ids as $group_id) {
 		$group = new Groups_Group($group_id);
 		$groupName = $group->name;
-		if ( !($groupName == "Registered") && !($groupName == "guest") ) {
+		
+		if ( !(in_array($groupName, $hiddenGroups) ) ) {
 			echo '<p><a href="#'.$groupName.'">'.$groupName."</a></p>";
 		}
 
@@ -49,12 +60,11 @@ function groups_users_list_groups() {
 		//echo "TRUE <br />";
 		$group = new Groups_Group($group_id);
 		$groupName = $group->name;
-		if ( !($groupName == "Registered") && !($groupName == "guest") ) {
+		if ( !(in_array($groupName, $hiddenGroups) ) ) {
 			echo "<h2 id='$groupName'>".$groupName."</h2>";
-			//print_r($group);
 			if ($group) {
-				//echo "TRUE <br />";
 				$users = $group->__get("users");
+				usort( $users, 'sortGroupsUserByDisplayName' );
 				if (count($users)>0) {
 					echo '<div class="row">';
 					$totalInGroup = count($users);
