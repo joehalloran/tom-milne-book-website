@@ -70,7 +70,7 @@ function groups_users_list_groups() {
 					$totalInGroup = count($users);
 					$firstThird = round( ($totalInGroup / 3) , 0);
 					$secondThird = $firstThird * 2;
-					$i = 0;
+					$i = 1;
 					echo '<div class="col-sm-4 col-xs-6">';
 					foreach ($users as $group_user) {
 						$user = $group_user->user;
