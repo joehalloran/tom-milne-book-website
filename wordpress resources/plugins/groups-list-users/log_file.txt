@@ -1,0 +1,20 @@
+This group does not appear to exist.Group id# 1000does not appear to exist.Group id# 1000does not appear to exist.Group id# 1000does not appear to exist.Group id# 1001does not appear to exist.Group id# 1000does not appear to exist.Group id# 1002does not appear to exist./n Group id# 1003does not appear to exist.\n Group id# 1004does not appear to exist.
+ Group id# 1005does not appear to exist.
+Cannot reset password for Group id# 12, group nameTeachers
+Could not reset password for: Adam Ant. This user is admin or teacher.
+Could not reset password for: Joe Halloran. This user is admin or teacher.
+Could not reset password for: Joseph Hallo. This user is admin or teacher.
+Could not reset password for: test test. This user is admin or teacher.
+Could not reset password for: Zoe Smith. This user is admin or teacher.
+Could not reset password for: Adam Ant. This user is admin or teacher.	
+Could not reset password for: Joe Halloran. This user is admin or teacher.	
+Could not reset password for: Joseph Hallo. This user is admin or teacher.	
+Could not reset password for: test test. This user is admin or teacher.	
+Could not reset password for: Zoe Smith. This user is admin or teacher.	
+Could not reset password for: Adam Ant. This user is admin or teacher.	
+Could not reset password for: Joe Halloran. This user is admin or teacher.	
+Could not reset password for: Joseph Hallo. This user is admin or teacher.	
+Could not reset password for: test test. This user is admin or teacher.	
+Could not reset password for: Zoe Smith. This user is admin or teacher.	
+Could not reset password for: Joe Halloran. This user is admin or teacher.	
+Could not reset password for: Joe Halloran. This user is admin or teacher.	
